@@ -8,6 +8,7 @@ enabling the attacker to intercept, change or modify network traffic on the fly.
 #====== Libraries
 #scapy
 #pywin32 (if Windows)
+#======
 
 from scapy.all import Ether, ARP, srp, send
 import argparse
@@ -54,3 +55,5 @@ def get_mac(ip):
     ans, _ = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=ip), timeout=3, verbose=0)
     if ans:
         return ans[0][1].src
+
+#Get packages
